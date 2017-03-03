@@ -2,6 +2,11 @@
 
 * [Introduction](README.md)
 
+## 初识服务器
+
+* [服务器\(VPS\)的选取](\(vps\).md)
+* [连接远程服务器\(SSH\)](\(ssh\).md)
+
 ## 服务器环境搭建
 
 * [安装mysql](mysql.md)
