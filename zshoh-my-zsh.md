@@ -100,11 +100,11 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
 
 ### 差异
 
-- 我们现在增加系统变量在：/etc/profile 后，输入命令：`source /etc/profile` 之后，重启服务器发现刚刚的系统变量现在没效果。
+* 我们现在增加系统变量在：/etc/profile 后，输入命令：`source /etc/profile` 之后，重启服务器发现刚刚的系统变量现在没效果。
 
   > 解决办法：`vim ~/.zshrc`，在该配置文件里面增加一行：`source /etc/profile`，然后刷新 zsh 的配置：`source ~/.zshrc`。
-  
-- 用bash的时候，写环境变量可能写在了bash_profile里，但是用zsh的时候，环境变量就应该写在.zshrc里了，配置的时候注意一下。
+
+* 用bash的时候，写环境变量可能写在了bash\_profile里，但是用zsh的时候，环境变量就应该写在.zshrc里了，配置的时候注意一下。
 
 ### 插件
 
@@ -163,7 +163,13 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
   `avit`  
   `blinks`
 
+  > ys效果：
+  >
+  > ![](/assets/omzshys.png)
+
 * 编辑配置文件：vim /root/.zshrc，找到下图的地方，怎么安装，原作者注释写得很清楚了，如果你没特别的喜欢那就选择随机吧。
 
   > ![](/assets/omzshzhuti.png)
+
+
 
