@@ -1,7 +1,24 @@
-
-## 先说下：Zsh 和 oh-my-Zsh 的关系
+## zsh
 
 > Zsh 是 Shell 中的一种，什么 Shell 你可以再搜索下，简单粗暴讲就是一个：命令解释器，你输入什么命令，它就执行什么，这个东西再 Unix 世界还有其他几个。
+
+先看下你的 CentOS 支持哪些 shell：`cat /etc/shells`，正常结果应该是这样的：
+
+```
+/bin/sh
+/bin/bash
+/sbin/nologin
+/bin/dash
+/bin/tcsh
+/bin/csh
+```
+
+
+
+
+
+## Zsh 和 oh-my-Zsh 的关系
+
 
 由于 Zsh 配置门槛有点高，或者说需要专门花时间去了解 Zsh 才能配置好一个好用的 Zsh，也因为这样，用户也就相对少了。
 
@@ -47,6 +64,43 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
 现在你关掉终端或是重新连上 shell，现在开头是一个箭头了，如下图：
 
 ![](/assets/omzsh2.png)
+
+## Zsh 软件特色
+
+- 不区分大小写智能提示。我是不喜欢大小写区分的那种人，所以用了 zsh 之后，经常按 Tab 进行提示。
+
+- 此外，按下 tab 键显示出所有待选项后，再按一次 tab 键，即进入选择模式，进入选择模式后，按 tab 切向下一个选项，按 shift + tab 键切向上一个选项，ctrl+f/b/n/p 可以向前后左右切换。
+
+- kill + 空格键 + Tab键，列出运行的进程，要啥哪个进程不需要再知道 PID 了，当然了 zsh，提供了让你知道 PID 的方法：
+比如输入：kill vim，再按下 tab，会变成：kill 5643
+
+- ls **/*，分层级地列出当前目录下所有文件及目录，并递归目录
+
+- ls *.png 查找当前目录下所有 png 文件
+
+- ls **/*.png 递归查找
+
+- zsh 的目录跳转很智能，你无需输入 cd 就可直接输入路径即可。比如：.. 表示后退一级目录，../../ 表示后退两级，依次类推。
+
+- 在命令窗口中输入：d，将列出当前 session 访问过的所有目录，再按提示的数字即可进入相应目录。
+
+- 给 man 命令增加结果高亮显示：
+
+  > 编辑配置文件：vim ~/.zshrc，增加下面内容：
+  
+  ```
+  # man context highlight
+export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+export LESS_TERMCAP_me=$'\E[0m'           # end mode
+export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
+  ```
+刷新配置文件：`source ~/.zshrc`，重新查看 man 的命令就可以有高亮了。  
+  
 
 
 
